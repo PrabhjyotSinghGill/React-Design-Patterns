@@ -10,4 +10,16 @@ export const CurrentUserLoader =({children}) =>{
             setUser(response.data);
         })();
     },[]);
+
+    return(
+        <>
+            {React.Children.map(children, child => {
+                if(React.isValidElement(child)){
+                    return React.cloneElement(child,{user});
+                }
+                
+                return child;
+            })}
+        </>
+    )
 }
