@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 let currentUser = {
-	id:'1',
+	id:'1', 
 	name: 'John Doe',
 	age: 54,
 	hairColor: 'brown',
