@@ -3,6 +3,8 @@ import { UserInfo } from "./UserInfo";
 import { UserLoader } from "./UserLoader";
 import { ResourceLoader } from "./ResourceLoader";
 import {ProductInfo} from "./ProductInfo";
+import {DataSource} from "./DataSource";
+
 
 function App() {
   return (
