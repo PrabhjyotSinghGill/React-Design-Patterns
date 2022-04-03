@@ -1,15 +1,19 @@
 import React from "react";
 import { UserInfo } from "./UserInfo";
 import { UserLoader } from "./UserLoader";
-
-const usetIds = ['1','2','3'];
+import { ResourceLoader } from "./ResourceLoader";
+import {ProductInfo} from "./ProductInfo";
 
 function App() {
   return (
-    <
-      UserLoader>
+    <>
+    <ResourceLoader resourceUrl="/users/1" resourceName="user">
       <UserInfo></UserInfo>
-    </UserLoader>
+    </ResourceLoader>
+    <ResourceLoader resourceUrl="/products/001" resourceName="product">
+      <ProductInfo></ProductInfo>
+    </ResourceLoader>
+    </>
   );
 }
 

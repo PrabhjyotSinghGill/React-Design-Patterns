@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const port = 8080;
+
 app.use(express.json());
 
 let currentUser = {
@@ -85,6 +87,6 @@ app.get('/products', (req, res) => {
 	res.json(products);
 });
 
-app.listen(8080, () => {
-	console.log('Server is listening on port 8080');
+app.listen(port, () => {
+	console.log('Server is listening on port ${port}');
 });
