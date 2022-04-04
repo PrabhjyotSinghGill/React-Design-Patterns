@@ -1,12 +1,12 @@
 import React from 'react';
-import UncontrolledForm from "./UncontrolledForm.js";
+import {ControlledForm} from "./ControlledForm.js";
 
 
 
 function App() {
     return (
     <>
-        <UncontrolledForm></UncontrolledForm>
+        <ControlledForm></ControlledForm>
     </>
     );
 }
