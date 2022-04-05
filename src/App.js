@@ -8,12 +8,17 @@ const StepThree = ({goToNext}) =>  (<><h1>Step 3</h1> <button onClick={() => goT
 function App() {
     const [shouldShowModal, setShouldShowModal] = useState(false);
     
+    const onNext = stepData => {
+        setOnboardingData({...onboardingData,...stepData});
+        setCurrentIndex(currentIndex+1);
+    }
+
     return <>
-        <UncontrolledOnboardingFlow onFinish={data =>{console.log(data); alert('Onboarding complete!');}}>
+        <ControlledOnboardingFlow currentIndex={currentIndex} onNext={onNext}>
             <StepOne></StepOne>
             <StepTwo></StepTwo>
             <StepThree></StepThree>
-        </UncontrolledOnboardingFlow>
+        </ControlledOnboardingFlow>
     </>;
 }
 
