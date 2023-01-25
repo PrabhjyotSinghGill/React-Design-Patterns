@@ -2,7 +2,7 @@ import React from "react";
 
 function RightComponent() {
   return (
-    <div style={{background:'olive'}}>
+    <div>
       <h1>Right Component</h1>
     </div>
   );

@@ -7,7 +7,12 @@ import RightComponent from "./components/RightComponent.jsx";
 function App() {
   return (
     <div className="app">
-      <SplitScreen left={LeftComponent} right={RightComponent}></SplitScreen>
+      <SplitScreen
+        left={LeftComponent}
+        right={RightComponent}
+        leftPanelWeight={1}
+        rightPanelWeight={1}
+      ></SplitScreen>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 function LeftComponent() {
   return (
-    <div style={{background:'skyblue'}}>
+    <div>
       <h1>Left Component</h1>
     </div>
   );
