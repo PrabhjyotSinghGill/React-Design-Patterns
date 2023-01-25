@@ -5,6 +5,7 @@ import LeftComponent from "./components/LeftComponent.jsx";
 import RightComponent from "./components/RightComponent.jsx";
 import List from "./components/List.jsx";
 import PersonList from "./list_components/PersonList";
+import Modal from "./modals/Modal";
 
 const people = [
   {
@@ -36,7 +37,10 @@ function App() {
         leftPanelWeight={1}
         rightPanelWeight={1}
       ></SplitScreen>
-      <List name="person" list={people} component={PersonList}></List>
+
+      <Modal>
+        <List name="person" list={people} component={PersonList}></List>
+      </Modal>
     </div>
   );
 }

@@ -21,7 +21,7 @@ function SplitScreen({
       </div>
       <div
         className="panel"
-        style={{ flex: rightPanelWeight, background: "olive" }}
+        style={{ flex: rightPanelWeight, background: "lightgreen" }}
       >
         <Right></Right>
       </div>
