@@ -6,6 +6,8 @@ import RightComponent from "./components/RightComponent.jsx";
 import List from "./components/List.jsx";
 import PersonList from "./list_components/PersonList";
 import Modal from "./modals/Modal";
+import UserLoader from "./container-components/UserLoader";
+import UserInfo from "./container-components/UserInfo.jsx";
 
 const people = [
   {
@@ -38,9 +40,13 @@ function App() {
         rightPanelWeight={1}
       ></SplitScreen>
 
-      <Modal>
+      {/* <Modal>
         <List name="person" list={people} component={PersonList}></List>
-      </Modal>
+      </Modal> */}
+
+      <UserLoader>
+        <UserInfo></UserInfo>
+      </UserLoader>
     </div>
   );
 }
