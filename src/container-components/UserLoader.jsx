@@ -2,16 +2,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function UserLoader({ children }) {
+function UserLoader({ userId, children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("/current-user");
-      const currentUser = response.data;
+      const response = await axios.get(`/users/${userId}`);
       setUser(response.data);
     })();
-  }, []);
+  }, [userId]);
 
   return (
     <>

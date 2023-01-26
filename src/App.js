@@ -44,7 +44,7 @@ function App() {
         <List name="person" list={people} component={PersonList}></List>
       </Modal> */}
 
-      <UserLoader>
+      <UserLoader userId={"3"}>
         <UserInfo></UserInfo>
       </UserLoader>
     </div>
