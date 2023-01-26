@@ -44,9 +44,12 @@ function App() {
         <List name="person" list={people} component={PersonList}></List>
       </Modal> */}
 
-      <UserLoader userId={"3"}>
+      <UserLoader userId={"1"}>
         <UserInfo></UserInfo>
       </UserLoader>
+
+      {/* Getting data from Local Storage */}
+      <h1>{localStorage.getItem("message")}</h1>
     </div>
   );
 }
