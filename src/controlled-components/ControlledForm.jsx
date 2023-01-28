@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ControlledForm() {
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState();
   const [hairColor, setHairColor] = useState("");
+
+  useEffect(()=>{
+    if(name.length<2){
+        console.log('Name must be 2 or more characters.')
+    }
+  },[name])
 
   return (
     <form>
@@ -28,6 +34,7 @@ function ControlledForm() {
         value={hairColor}
         onChange={(e) => setHairColor(e.target.value)}
       ></input>
+      <button>Submit</button>
     </form>
   );
 }
