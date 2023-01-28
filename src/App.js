@@ -8,6 +8,7 @@ import PersonList from "./list_components/PersonList";
 import Modal from "./modals/Modal";
 import UserLoader from "./container-components/UserLoader";
 import UserInfo from "./container-components/UserInfo.jsx";
+import Form from "./Form.js";
 
 const people = [
   {
@@ -50,6 +51,7 @@ function App() {
 
       {/* Getting data from Local Storage */}
       <h1>{localStorage.getItem("message")}</h1>
+      <Form></Form>
     </div>
   );
 }
