@@ -9,6 +9,7 @@ import Modal from "./modals/Modal";
 import UserLoader from "./container-components/UserLoader";
 import UserInfo from "./container-components/UserInfo.jsx";
 import Form from "./Form.js";
+import Hoc from "./higher-order-components/Hoc";
 
 const people = [
   {
@@ -31,6 +32,8 @@ const people = [
   },
 ];
 
+const UserInfoWrapped = Hoc(UserInfo);
+
 function App() {
   return (
     <div className="app">
@@ -52,6 +55,8 @@ function App() {
       {/* Getting data from Local Storage */}
       <h1>{localStorage.getItem("message")}</h1>
       <Form></Form>
+      <h3>Higher Order Components</h3>
+      <UserInfoWrapped a={1} b="Hello" c={{ name: "Gill" }}></UserInfoWrapped>
     </div>
   );
 }
