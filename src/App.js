@@ -10,6 +10,7 @@ import UserLoader from "./container-components/UserLoader";
 import UserInfo from "./container-components/UserInfo.jsx";
 import Form from "./Form.js";
 import Hoc from "./higher-order-components/Hoc";
+import WithUser from "./higher-order-components/WithUser";
 
 const people = [
   {
@@ -32,7 +33,9 @@ const people = [
   },
 ];
 
+//HOC
 const UserInfoWrapped = Hoc(UserInfo);
+const UserInfoWithLoader = WithUser(UserInfo, "2");
 
 function App() {
   return (
@@ -57,6 +60,8 @@ function App() {
       <Form></Form>
       <h3>Higher Order Components</h3>
       <UserInfoWrapped a={1} b="Hello" c={{ name: "Gill" }}></UserInfoWrapped>
+      <h3>Higher Order Components User Info With Loader</h3>
+      <UserInfoWithLoader></UserInfoWithLoader>
     </div>
   );
 }
