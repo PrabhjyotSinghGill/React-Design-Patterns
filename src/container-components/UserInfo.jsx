@@ -22,12 +22,17 @@
 // export default UserInfo;
 
 //Using Custom Hook
+import axios from "axios";
 import { useCurrentUser } from "../custom-hooks/useCurrentUser";
 import { useUser } from "../custom-hooks/useUser";
 import { useResource } from "../custom-hooks/useResource";
+import { useDataSource } from "../custom-hooks/useDataSource";
 
 function UserInfo({ userId }) {
-  const user = useResource(`/users/${userId}`);
+  const user = useDataSource(async () => {
+    const response = await axios.get("/users/1");
+    return response.data;
+  });
   const { name, age, hairColor, hobbies } = user || {};
 
   return user ? (
