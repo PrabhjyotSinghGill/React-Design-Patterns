@@ -11,6 +11,7 @@ import UserInfo from "./container-components/UserInfo.jsx";
 import Form from "./Form.js";
 import Hoc from "./higher-order-components/Hoc";
 import WithUser from "./higher-order-components/WithUser";
+import { Recursive } from "./functional-programming/Recursive";
 
 const people = [
   {
@@ -32,6 +33,29 @@ const people = [
     hobbies: ["biology", "medicine", "gymnastics"],
   },
 ];
+
+//Recursive Component
+const nestedObject = {
+  a: 1,
+  b: {
+    b1: 4,
+    b2: {
+      b23: "Hello",
+    },
+    b3: {
+      b31: {
+        message: "Hi",
+      },
+      b32: {
+        message: "Hi",
+      },
+    },
+  },
+  c: {
+    c1: 2,
+    c2: 3,
+  },
+};
 
 //HOC
 const UserInfoWrapped = Hoc(UserInfo);
@@ -62,6 +86,8 @@ function App() {
       <UserInfoWrapped a={1} b="Hello" c={{ name: "Gill" }}></UserInfoWrapped>
       <h3>Higher Order Components User Info With Loader</h3>
       <UserInfoWithLoader></UserInfoWithLoader>
+      <h3>Recursive Component</h3>
+      <Recursive data={nestedObject}/>
     </div>
   );
 }
