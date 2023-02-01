@@ -24,9 +24,10 @@
 //Using Custom Hook
 import { useCurrentUser } from "../custom-hooks/useCurrentUser";
 import { useUser } from "../custom-hooks/useUser";
+import { useResource } from "../custom-hooks/useResource";
 
-function UserInfo() {
-  const user = useUser(3);
+function UserInfo({ userId }) {
+  const user = useResource(`/users/${userId}`);
   const { name, age, hairColor, hobbies } = user || {};
 
   return user ? (
